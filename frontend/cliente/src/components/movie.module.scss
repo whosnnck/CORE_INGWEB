@@ -1,27 +1,44 @@
 .tittle {
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #4235d6;
-    z-index: 1000;
-    padding: 10px;
-    h1 {
-      font-size: 40px;
-      color: #ffffff; 
-    }
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #4235d6;
+  z-index: 1000;
+  padding: 10px;
+
+  h1 {
+    font-size: 40px;
+    color: #ffffff; 
   }
-  
-  // Importar la fuente de Google Fonts
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .reader {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
 
-  // Estilo para cada bloque div dentro de .reader
+  select {
+    font-family: 'Poppins', sans-serif;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #6358dc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+
+    &:hover {
+      border-color: #4235d6;
+    }
+  }
+
   & > div {
     flex: 1 0 calc(33.333% - 20px);
     display: flex;
@@ -33,13 +50,13 @@
       width: 100%;
       max-width: 200px;
       height: auto;
-      border-radius: 8px; // Esquinas redondeadas
+      border-radius: 8px;
     }
 
     h3 {
       margin-top: 10px;
       font-size: 18px;
-      font-family: 'Poppins', sans-serif; // Fuente de Google Fonts
+      font-family: 'Poppins', sans-serif;
       text-align: center;
     }
 
@@ -47,17 +64,12 @@
       margin-top: 5px;
       font-size: 16px;
       font-weight: bold;
-      color: #007bff; // Color de enlace
+      color: #007bff;
+      font-family: 'Poppins', sans-serif;
     }
-
-    
   }
 }
 
-  
-
-
-  // Importar la fuente de Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .calificar {
@@ -69,23 +81,23 @@
   h1 {
     font-size: 24px;
     margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+    font-family: 'Poppins', sans-serif;
   }
 
   h2 {
     font-size: 20px;
     margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+    font-family: 'Poppins', sans-serif;
   }
 
   img {
-    max-width: 300px; /* Ajusta el ancho deseado */
+    max-width: 300px;
     height: auto;
     margin-bottom: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 8px; /* Esquinas redondeadas */
+    border-radius: 8px;
   }
 
   form {
@@ -103,7 +115,7 @@
         padding: 8px;
         box-sizing: border-box;
         margin-top: 5px;
-        font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+        font-family: 'Poppins', sans-serif;
       }
 
       textarea {
@@ -119,22 +131,21 @@
       border: none;
       border-radius: 5px;
       font-size: 16px;
-      font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+      font-family: 'Poppins', sans-serif;
     }
   }
 
-  // Estilo para el mensaje
   p {
-    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+    font-family: 'Poppins', sans-serif;
     margin-top: 10px;
     text-align: center;
     a {
-      color: #007bff; // Color de enlace
+      color: #007bff;
       text-decoration: underline;
     }
   }
 }
-  
+
 .welcome {
   padding: 35px 75px;
   background-color: white;
@@ -146,7 +157,7 @@
     color: #6358dc;
     font-size: 25px;
     margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+    font-family: 'Poppins', sans-serif;
   }
 
   &.buttons {
@@ -170,8 +181,6 @@
     }
   }
 }
-
-// Agrega estos estilos a tu archivo SCSS
 
 .edit {
   max-width: 600px;
@@ -208,7 +217,7 @@
     }
   }
   img {
-    max-width: 300px; /* Ajusta el ancho deseado */
+    max-width: 300px;
     height: auto;
     margin-bottom: 20px;
     display: block;
@@ -217,4 +226,3 @@
     border-radius: 8px;
   }
 }
-

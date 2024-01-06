@@ -100,11 +100,7 @@ exports.agregarCalificacion = async (req, res) => {
 exports.obtenerComentarioPorPelicula = async (req, res) => {
   try {
     const peliculaId = req.params.peliculaId;
-
-    // Obtener las calificaciones para la película específica
     const calificaciones = await Calificacion.find({ pelicula: peliculaId });
-
-    // Crear un array para almacenar la información de cada comentario
     const comentarios = [];
 
     // Iterar sobre cada calificación y obtener información del usuario
@@ -120,6 +116,19 @@ exports.obtenerComentarioPorPelicula = async (req, res) => {
   } catch (error) {
     console.error('Error al obtener los comentarios', error);
     res.status(500).json({ message: 'Error en el servidor', error });
+  }
+};
+
+exports.obtenerVotosPorUsuario = async (req, res) => {
+  try {
+    const { usuarioId } = req.query;
+
+    const votosUsuario = await Calificacion.find({ usuario: usuarioId }).populate('pelicula', 'nombre');
+
+    res.json(votosUsuario);
+  } catch (error) {
+    console.error('Error al obtener los votos:', error.message);
+    res.status(500).json({ message: 'Error al obtener los votos.' });
   }
 };
 

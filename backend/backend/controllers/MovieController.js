@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Pelicula = require('../model/pelicula');
+const Calificacion = require('../model/calificacion')
 const uploadImage = require('../libs/cloudinary.js');
 const fs = require('fs-extra');
 
@@ -44,7 +45,7 @@ exports.registroPelicula = async(req, res) => {
 //Ruta para obtener las peliculas R
 exports.obtenerPeliculas = async (req, res) => {
     try{
-        const pelicula = await Pelicula.find();
+        const pelicula = await Pelicula.find().sort({ calificacionPelicula : -1});
         res.json(pelicula);
     } catch (error) {
         res.status(500).json({message: 'Error al obtener las peliculas'})
@@ -91,3 +92,35 @@ exports.eliminarPelicula = async (req, res) => {
         res.status(404).json({message: 'Error al eliminar la pelicula'});
     }
 };
+
+exports.obtenerTodosLosVotos = async (req, res) => {
+    try {
+        const votosUsuario = await Calificacion.find().populate('pelicula').populate('usuario');
+    
+        const conteoPorCategoria = {};
+    
+        votosUsuario.forEach((voto) => {
+          const categoria = voto.pelicula && voto.pelicula.tipo; 
+          const rol = voto.usuario && voto.usuario.rol; 
+    
+          if (categoria && rol) {
+            if (!conteoPorCategoria[categoria]) {
+              conteoPorCategoria[categoria] = {};
+            }
+    
+            if (!conteoPorCategoria[categoria][rol]) {
+              conteoPorCategoria[categoria][rol] = 1;
+            } else {
+              conteoPorCategoria[categoria][rol]++;
+            }
+          }
+        });
+        console.log(conteoPorCategoria);
+        res.json(conteoPorCategoria);
+      } catch (error) {
+        console.error('Error al obtener los votos:', error.message);
+        res.status(500).json({ message: 'Error al obtener los votos.' });
+      }
+  };
+  
+

@@ -9,5 +9,4 @@ const router = Router();
 router.post('/calificar/:id', agregarCalificacion);
 router.get('/comentario/:id', obtenerComentarioPorPelicula);
 
-
 module.exports = router;

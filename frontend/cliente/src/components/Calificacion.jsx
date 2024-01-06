@@ -106,7 +106,7 @@ const CalificacionPage = () => {
                 </div>
                 <br />
                 <label>
-                  Comentario:
+                  
                   <textarea
                     value={comentario}
                     onChange={(e) => setComentario(e.target.value)}

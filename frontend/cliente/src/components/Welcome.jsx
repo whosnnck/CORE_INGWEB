@@ -14,6 +14,8 @@ const Welcome = () => {
   const token = localStorage.getItem("token");
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const [tipoSeleccionado, setTipoSeleccionado] = useState('Todos');
+
 
   const cerrarSesion = () => {
     localStorage.removeItem('token');
@@ -47,6 +49,12 @@ const Welcome = () => {
         .catch((error) => console.error(error));
     }
   }, [token, id]);
+
+  const peliculasFiltradas = tipoSeleccionado === 'Todos'
+    ? movies
+    : movies.filter(movie => movie.tipo === tipoSeleccionado);
+
+
   
   //console.log(user);
   return (
@@ -63,34 +71,49 @@ const Welcome = () => {
             <button onClick={() => navigate('/registerUser')}>Registrar usuario nuevo</button>
             </p>
           )}
+          {user.rol === 'Administrador' && (
+            <p>
+            <button onClick={() => navigate('/reportePelicula')}>Reporte de votaciones</button>
+            </p>
+          )}
         </div>
         )}
         <p>
           <button onClick={cerrarSesion}>Cerrar Sesión</button>
         </p>
-    <div className={movie.reader}>
-          {movies &&
-            movies.map((movie) => {
-              return (
-                <div key={movie._id}>
-                  <img
-                    className={movie.img}
-                    src={movie.image.url}
-                    alt="Película"
-                  />
-                  <Link to={`/movies/${movie._id}`}>
-                    <h3>{movie.nombre}</h3>
-                  </Link>
-                  <h3>{movie.productor}</h3>
-                  <h3>{movie.director}</h3>
-                  <h3>{movie.clasificacion}</h3>
-                  <h3>{movie.tipo}</h3>
-                  <b>
+        <div className={movie.reader}>
+        <select onChange={(e) => setTipoSeleccionado(e.target.value)}>
+            <option value="Todos">Todos</option>
+            <option value="Accion">Acción</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Ciencia Ficcion">Ciencia Ficción</option>
+            <option value="Fantasia">Fantasía</option>
+          </select>
+  
+          {peliculasFiltradas.map((movie) => {
+            return (
+              <div key={movie.id}>
+                <img
+                  className={movie.img}
+                  src={movie.image.url}
+                  alt="Película"
+                />
+                <Link to={`/movies/${movie._id}`}>
+                  <h3>{movie.nombre}</h3>
+                </Link>
+                <h3>{movie.productor}</h3>
+                <h3>{movie.director}</h3>
+                <h3>{movie.clasificacion}</h3>
+                <h3>{movie.tipo}</h3>
+                <b>
                   <h1>Calificacion : {movie.calificacionPelicula}</h1>
-                  </b>
-                </div>
-              );
-            })}
+                </b>
+              </div>
+            );
+            
+          })}
+          
         </div>
         
     </div>

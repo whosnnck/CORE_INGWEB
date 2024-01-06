@@ -6,11 +6,29 @@ import movie from "./movie.module.scss";
 
 const MovieR = () => {
     const [movies, setMovies] = useState([]);
+    const [tipoSeleccionado, setTipoSeleccionado] = useState('Todos');
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-
+    useEffect(() => {
+      const fetchSearchResults = async () => {
+        try {
+          const response = await axios.get(`http://localhost:4000/api/peliculas/search?q=${searchTerm}`);
+          setSearchResults(response.data);
+        } catch (error) {
+          console.error('Error al buscar películas:', error);
+        }
+      };
+  
+      if (searchTerm.trim() !== '') {
+        fetchSearchResults();
+      } else {
+        setSearchResults([]); // Limpiar resultados si el término de búsqueda está vacío
+      }
+    }, [searchTerm]);
       
 
     useEffect(() => {
@@ -35,9 +53,13 @@ const MovieR = () => {
         }
     }, []);
         
+    const peliculasFiltradas = tipoSeleccionado === 'Todos'
+    ? movies
+    : movies.filter(movie => movie.tipo === tipoSeleccionado);
+
 
     return (
-    <div>
+      <div>
         <div className={`${movie.welcome} ${movie.buttons}`}>
           <p>
             <h1>EcuMovie</h1>
@@ -45,37 +67,46 @@ const MovieR = () => {
           <p>
             <h1>TOP PELICULAS ECUATORIANAS</h1>
           </p>
-            <p>
-              <button onClick={() => navigate("/login")}>Inicia sesión</button>
-            </p>
-         
-          
+          <p>
+            <button onClick={() => navigate("/login")}>Inicia sesión</button>
+          </p>
         </div>
         <div className={movie.reader}>
-          {movies &&
-            movies.map((movie) => {
-              return (
-                <div key={movie.id}>
-                  <img
-                    className={movie.img}
-                    src={movie.image.url}
-                    alt="Película"
-                  />
-                  <Link to={`/movies/${movie._id}`}>
-                    <h3>{movie.nombre}</h3>
-                  </Link>
-                  <h3>{movie.productor}</h3>
-                  <h3>{movie.director}</h3>
-                  <h3>{movie.clasificacion}</h3>
-                  <h3>{movie.tipo}</h3>
-                  <b>
+
+        <select onChange={(e) => setTipoSeleccionado(e.target.value)}>
+            <option value="Todos">Todos</option>
+            <option value="Accion">Acción</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Ciencia Ficcion">Ciencia Ficción</option>
+            <option value="Fantasia">Fantasía</option>
+          </select>
+
+          {peliculasFiltradas.map((movie) => {
+            return (
+              <div key={movie.id}>
+                <img
+                  className={movie.img}
+                  src={movie.image.url}
+                  alt="Película"
+                />
+                <Link to={`/movies/${movie._id}`}>
+                  <h3>{movie.nombre}</h3>
+                </Link>
+                <h3>{movie.productor}</h3>
+                <h3>{movie.director}</h3>
+                <h3>{movie.clasificacion}</h3>
+                <h3>{movie.tipo}</h3>
+                <b>
                   <h1>Calificacion : {movie.calificacionPelicula}</h1>
-                  </b>
-                </div>
-              );
-            })}
+                </b>
+              </div>
+            );
+            
+          })}
+          
         </div>
-    </div>
+      </div>
     );
 };
 

@@ -8,6 +8,7 @@ import RegisterNormal from "./components/RegisterNormal";
 import EditPage from "./components/EditForm";
 import CRUDAdmin from "./components/CRUDAdmin";
 import {PrivateRoute} from "./controllers/PrivateRoute";
+import Reporte from "./components/Reporte"
 //import {PrivateAdmin} from "./controllers/PrivateAdmin";
 import Calificar from "./components/Calificacion";
 const App = () => {
@@ -38,6 +39,10 @@ const App = () => {
         <Route
             path="/edit/movies/:id"
             element={<PrivateRoute element={<EditPage />} isAuthenticated={isAuthenticated} fallbackPath="/login" />}
+          />
+        <Route
+            path="/reportePelicula"
+            element={<PrivateRoute element={<Reporte />} isAuthenticated={isAuthenticated} fallbackPath="/login" />}
           />
        
       </Routes>

@@ -1,0 +1,220 @@
+.tittle {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4235d6;
+    z-index: 1000;
+    padding: 10px;
+    h1 {
+      font-size: 40px;
+      color: #ffffff; 
+    }
+  }
+  
+  // Importar la fuente de Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.reader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  // Estilo para cada bloque div dentro de .reader
+  & > div {
+    flex: 1 0 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+
+    img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px; // Esquinas redondeadas
+    }
+
+    h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif; // Fuente de Google Fonts
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #007bff; // Color de enlace
+    }
+
+    
+  }
+}
+
+  
+
+
+  // Importar la fuente de Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.calificar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+  }
+
+  img {
+    max-width: 300px; /* Ajusta el ancho deseado */
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px; /* Esquinas redondeadas */
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-top: 5px;
+        font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+    }
+  }
+
+  // Estilo para el mensaje
+  p {
+    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+    margin-top: 10px;
+    text-align: center;
+    a {
+      color: #007bff; // Color de enlace
+      text-decoration: underline;
+    }
+  }
+}
+  
+.welcome {
+  padding: 35px 75px;
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+
+  h1 {
+    font-weight: bold;
+    color: #6358dc;
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente deseada */
+  }
+
+  &.buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 15px;
+
+    button {
+      background-color: #6358dc;
+      border: none;
+      cursor: pointer;
+      color: white;
+      padding: 5px 20px;
+      border-radius: 3px;
+      transition-duration: 0.3s;
+
+      &:hover {
+        background-color: #4235d6;
+      }
+    }
+  }
+}
+
+// Agrega estos estilos a tu archivo SCSS
+
+.edit {
+  max-width: 600px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin-left: 5px;
+    }
+  }
+  img {
+    max-width: 300px; /* Ajusta el ancho deseado */
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+  }
+}
+

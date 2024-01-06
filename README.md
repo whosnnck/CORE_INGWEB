@@ -27,7 +27,7 @@ Este proyecto MERN (MongoDB, Express.js, React.js, Node.js) se centra en la crea
 
 1. **Clonar Repositorio**:
    ```bash
-   git clone https://github.com/tuusuario/proyecto-mern-votacion-peliculas.git
+   git clone https://github.com/tuusuario/proyecto-mern-votacion-peliculas.git]
    cd proyecto-mern-votacion-peliculas
 ##DIAGRAMA DE ACTIVIDADES DEL CORE
 

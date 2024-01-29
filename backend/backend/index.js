@@ -33,6 +33,9 @@ app.use('/api/usuarios', require('./routes/usuarios'));
 
 app.use('/api/calificacion', require('./routes/calificacion'));
 
+app.use('/api/test', require('./routes/api'));
+
+
 //Coneccion al servidor
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

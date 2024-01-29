@@ -1,0 +1,58 @@
+{
+    "MCUmovies" : {
+        "001" : {
+            "nombre" : "Avengers EndGame",
+            "anioLanzamiento" : "2019",
+            "genero" : "Accion",
+            "imagen" : "https://th.bing.com/th/id/R.06869b53bd6a67ef5b4b7783643b3577?rik=rI%2fogOHsHPaPbQ&pid=ImgRaw&r=0",
+            "director" : "Joss Whedon",
+            "sinopsis" : "Five years later, Scott Lang escapes from the quantum realm to discover that his daughter Cassie is now a teenager and that Hope van Dyne, along with half of the population, has disappeared in the snap.",
+            "rating" : 8.4           
+        },
+        "002" : {
+            "nombre" : "Spider-Man: No Way Home",
+            "anioLanzamiento" : "2021",
+            "genero" : "Accion",
+            "imagen" : "https://th.bing.com/th/id/OIP.9IBYeqL7wGKtxsPLffGxPgHaLH?rs=1&pid=ImgDetMain",
+            "director" : "Jon Watts",
+            "sinopsis" : "Parker visits the New York Sanctum and asks Doctor Strange to make the identity of Spider-Man a secret once more to get his friends into MIT.",
+            "rating" : 8.2          
+        },
+        "003" : {
+            "nombre" : "Avengers Infinity War",
+            "anioLanzamiento" : "2018",
+            "genero" : "Accion",
+            "imagen" : "https://th.bing.com/th/id/OIP.1jdklJKgjAe81COtBdjG9AHaLH?rs=1&pid=ImgDetMain",
+            "director" : "Russo's Brothers",
+            "sinopsis" : "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos.",
+            "rating" : 8.4           
+        },
+        "004" : {
+            "nombre" : "The Avengers",
+            "anioLanzamiento" : "2012",
+            "genero" : "Accion",
+            "imagen" : "https://th.bing.com/th/id/OIP.7MGmLP_qzKPf6UuRKsDIpQHaK-?rs=1&pid=ImgDetMain",
+            "director" : "Joss Whedon",
+            "sinopsis" : "Loki, the adopted brother of Thor, teams-up with the Chitauri Army and uses the Tesseract's power to travel from Asgard to Midgard to plot the invasion of Earth and become a king.",
+            "rating" : 8.0           
+        },
+        "005" : {
+            "nombre" : "Avengers: Age of Ultron",
+            "anioLanzamiento" : "2015",
+            "genero" : "Adventure",
+            "imagen" : "https://th.bing.com/th/id/OIP.9NhaIerEtoOkTHzGjey0yAHaK-?rs=1&pid=ImgDetMain",
+            "director" : "Joss Whedon",
+            "sinopsis" : "Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile, The Avengers go into action to try and defeat a virtually impossible enemy together.",
+            "rating" : 7.3           
+        },
+        "006" : {
+            "nombre" : "Doctor Strange",
+            "anioLanzamiento" : "2016",
+            "genero" : "Fantasy",
+            "imagen" : "https://th.bing.com/th/id/R.25bc460495c5f541da79c8e39f00ded3?rik=T0TY36n3z%2bFXzQ&pid=ImgRaw&r=0",
+            "director" : "Joss Whedon",
+            "sinopsis" : "Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile, The Avengers go into action to try and defeat a virtually impossible enemy together.",
+            "rating" : 7.3           
+        }
+    }
+}

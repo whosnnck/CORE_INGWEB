@@ -9,6 +9,7 @@ import EditPage from "./components/EditForm";
 import CRUDAdmin from "./components/CRUDAdmin";
 import {PrivateRoute} from "./controllers/PrivateRoute";
 import Reporte from "./components/Reporte"
+import World from "./components/WorldMovie";
 //import {PrivateAdmin} from "./controllers/PrivateAdmin";
 import Calificar from "./components/Calificacion";
 const App = () => {
@@ -44,7 +45,8 @@ const App = () => {
             path="/reportePelicula"
             element={<PrivateRoute element={<Reporte />} isAuthenticated={isAuthenticated} fallbackPath="/login" />}
           />
-       
+        <Route path="/worldmovies" element={<World/>}/>
+        
       </Routes>
     </div>
     </BrowserRouter>

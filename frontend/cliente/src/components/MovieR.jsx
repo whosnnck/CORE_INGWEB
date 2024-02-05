@@ -68,6 +68,7 @@ const MovieR = () => {
             <h1>TOP PELICULAS ECUATORIANAS</h1>
           </p>
           <p>
+          <button onClick={() => navigate("/worldmovies")}>Peliculas del</button>
             <button onClick={() => navigate("/login")}>Inicia sesión</button>
           </p>
         </div>
